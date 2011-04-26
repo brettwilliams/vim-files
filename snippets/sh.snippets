@@ -1,0 +1,17 @@
+snippet usage
+	usage() {
+		echo "Usage: $(basename $0) ${1:arguments}"
+		echo "  -${2:option} <${3:optarg}"
+	}
+snippet for
+	for (( ${2:i} = 0; $2 < ${1:count}; $2++ )); do
+		${3:#statements}
+	done
+snippet wh
+	while [[ ${1:condition} ]]; do
+		${2:#statements}
+	done
+snippet until
+	[[ ${1:condition} ]]; do
+		${2:#statements}
+	done

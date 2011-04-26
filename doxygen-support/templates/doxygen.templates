@@ -1,0 +1,72 @@
+# =============================================================
+# ========== USER MACROS ======================================
+# =============================================================
+#
+$AUTHOR$    = Brett Williams
+$AUTHORREF$ = brettw
+$EMAIL$     = brett@avagotech.com
+$COMPANY$   = Avago Technologies
+$COPYRIGHT$ = (C) Copyright $COMPANY$ $YEAR$.  All rights reserved.
+$sortmenus$ = no
+
+#$includefile$   = doxygen.cpp.templates
+
+# =============================================================
+# ========== USER TEMPLATES  /  C++-STYLE =====================
+# =============================================================
+== block,long ==
+///
+/// <CURSOR>
+///
+#--------------------------------------------------------------
+== block,short ==
+/// <CURSOR>
+#--------------------------------------------------------------
+== brief,detailed ==
+///
+/// @brief <CURSOR>
+/// 
+/// Detailed description starts here.
+///
+#--------------------------------------------------------------
+== class ==
+///
+/// @ingroup $?DOCGROUP$
+/// @brief <CURSOR>
+///
+/// $?CLASSNAME$ ...
+/// 
+#--------------------------------------------------------------
+== function ==
+///
+/// @brief <CURSOR>
+/// @param 
+/// @return 
+/// @author $AUTHOR$
+/// @date $DATE$
+///
+#--------------------------------------------------------------
+== note == below ==
+/// @note  <CURSOR>
+#--------------------------------------------------------------
+== FILE-header == start ==
+///
+/// @file $FILE$
+/// @brief <CURSOR>
+///
+/// Detailed description starts here.
+///
+/// @author $AUTHOR$ ($AUTHORREF$), $EMAIL$
+///
+/// Created on $DATE$
+/// $COPYRIGHT$
+///
+\#ifndef $BASENAME$_H_
+\#define $BASENAME$_H_
+
+\#endif
+
+#--------------------------------------------------------------
+== brief-after-member == append ==
+ ///< @brief <CURSOR>
+#--------------------------------------------------------------

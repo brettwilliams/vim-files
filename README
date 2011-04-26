@@ -1,0 +1,9 @@
+Personal vim files.  Pathogen/solarized based.  Bundles are not kept
+using git submodules yet, just using a update_bundles.rb script that
+I modified from Tammer Saleh (thanks!).
+
+A few items I don't keep in sync.  Dr. Chip's align is ridiculously complex
+now, I am just keeping the old version that I have been using for years.
+
+I use snipMate a decent amount, and luckily the pathogen setup makes it easy to
+add my own snippets in the normal directories so they don't have to be merged.

@@ -1,0 +1,58 @@
+#
+# =============================================================
+# ========== USER TEMPLATES  /  C++-STYLE =====================
+# =============================================================
+== Cpp.block,long ==
+///
+/// <CURSOR>
+///
+#--------------------------------------------------------------
+== Cpp.block,short ==
+/// <CURSOR>
+#--------------------------------------------------------------
+== Cpp.brief,detailed ==
+///
+/// @brief <CURSOR>
+/// 
+/// Detailed description starts here.
+///
+#--------------------------------------------------------------
+== Cpp.class ==
+///
+/// @brief <CURSOR>
+///
+/// Detailed description starts here.
+/// 
+#--------------------------------------------------------------
+== Cpp.function ==
+///
+/// @brief  <CURSOR>
+/// @param  
+/// @return 
+/// @author $AUTHOR$
+///
+#--------------------------------------------------------------
+== Cpp.note == below ==
+/// @note   <CURSOR>
+#--------------------------------------------------------------
+== Cpp.FILE-header == start ==
+///
+/// @file  $FILE$
+/// @brief  <CURSOR>
+///
+/// Detailed description starts here.
+///
+/// @author  $AUTHOR$ ($AUTHORREF$), $EMAIL$
+/// Created on $DATE$
+///
+/// $COPYRIGHT$
+///
+\#ifndef $BASENAME$_H_
+\#define $BASENAME$_H_
+
+\#endif
+
+#--------------------------------------------------------------
+== Cpp.brief-after-member == append ==
+ ///< @brief <CURSOR>
+#--------------------------------------------------------------
