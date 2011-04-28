@@ -5,12 +5,12 @@
 """""""""""   keeping track--I can live without advanced features for the few
 """""""""""   times I'm stuck with one.
 if v:version > 630
+  " SETTING OPTIONS      {{{
   set nocompatible                  " Use Vim defaults, not compat with VI
   filetype off
   call pathogen#runtime_append_all_bundles() 
   call pathogen#helptags() 
   let g:mapleader = ";"
-  " SETTING OPTIONS      {{{
   set background=dark               " set background to dark
   set tags=tags
   set backspace=indent,eol,start    " ability to backspace over line break
@@ -56,6 +56,9 @@ if v:version > 630
   filetype plugin on
   syntax enable
   syntax on
+
+  " Turn on matchit, not on by default
+  source $VIMRUNTIME/macros/matchit.vim
   " }}}
 
   " FILETYPE SETTINGS and AUTOCMDS       {{{
@@ -89,6 +92,7 @@ endif
 
   " }}}
 
+  " Terminal settings {{{
   " This should work for any terminal I might use
   if has("gui_running")
     set t_Co=256
@@ -102,6 +106,7 @@ endif
     endif
     colorscheme solarized
   endif
+  " }}}
 
   " DEFINING FUNCTIONS AND COMMANDS                    {{{
   function ReadFTETemplate()
@@ -190,6 +195,11 @@ endif
   map <F8> :call Replace(0)<CR>
 
   vmap <Leader>a :call Align("f=")<CR>
+
+  "tcomment
+  let g:tcommentMapLeaderOp1 = ";c"
+  "yankring
+  map <Leader>y :YRShow<CR>
 
   map <Leader>h :noh<CR>
   map <Leader>s :call Toggle_Paste()<CR>
