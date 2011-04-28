@@ -21,6 +21,7 @@ FileUtils.mv(File.join(pathogen_local_dir, 'pathogen.vim'), 'autoload')
 FileUtils.rm_rf(pathogen_local_dir)
 
 # "git://github.com/tsaleh/vim-align.git",
+# "git://github.com/vim-scripts/doxygen-support.vim.git",
 git_bundles = [ 
   "git://github.com/scrooloose/nerdtree.git",
   "git://github.com/msanders/snipmate.vim.git",
@@ -31,7 +32,6 @@ git_bundles = [
   "git://github.com/tsaleh/vim-tcomment.git",
   "git://github.com/vim-ruby/vim-ruby.git",
   "git://github.com/fholgado/minibufexpl.vim.git",
-  "git://github.com/vim-scripts/doxygen-support.vim.git",
   "git://github.com/chrismetcalf/vim-yankring.git",
 ]
 
