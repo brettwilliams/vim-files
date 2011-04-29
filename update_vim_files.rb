@@ -22,10 +22,10 @@ FileUtils.rm_rf(pathogen_local_dir)
 
 # "git://github.com/tsaleh/vim-align.git",
 # "git://github.com/vim-scripts/doxygen-support.vim.git",
+#  "git://github.com/tpope/vim-fugitive.git",
 git_bundles = [ 
   "git://github.com/scrooloose/nerdtree.git",
   "git://github.com/msanders/snipmate.vim.git",
-  "git://github.com/tpope/vim-fugitive.git",
   "git://github.com/tpope/vim-git.git",
   "git://github.com/tpope/vim-repeat.git",
   "git://github.com/tpope/vim-surround.git",
@@ -33,6 +33,7 @@ git_bundles = [
   "git://github.com/vim-ruby/vim-ruby.git",
   "git://github.com/fholgado/minibufexpl.vim.git",
   "git://github.com/chrismetcalf/vim-yankring.git",
+  "git://repo.or.cz/vcscommand",
 ]
 
 vim_org_scripts = [
