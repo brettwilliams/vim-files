@@ -967,3 +967,4 @@ autocmd GUIEnter * if (s:vmode != "gui") | exe "colorscheme " . g:colors_name | 
 "
 " vim:foldmethod=marker:foldlevel=0
 "}}}
+hi Normal guifg=grey70 guibg=grey10

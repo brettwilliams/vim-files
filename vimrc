@@ -1,6 +1,6 @@
 "  If you are using VIM and you don't understand folds, do :set fdm=manual
 "  to see the contents of my file expanded normally
-""""""
+""""""""""
 """""""""""   First, don't set anything for older versions, it's not worth
 """""""""""   keeping track--I can live without advanced features for the few
 """""""""""   times I'm stuck with one.
@@ -49,6 +49,8 @@ if v:version > 630
   "set foldcolumn=4
   set listchars=tab:>-,eol:$,trail:~
   set autoread
+  set laststatus=2
+  set statusline=%<%f\ %h%m%r%=\{%{GitBranchInfoTokens()[0]}\}\ \ \ %-19.(%l/%L:%c\ %P%)
 
   " filetype goodies
   filetype on
@@ -71,7 +73,7 @@ if v:version > 630
   autocmd BufNewFile,BufReadPost *.qqq      setf make
 
   "FTE template hooks
-  autocmd BufNewFile * call ReadFTETemplate()
+  "autocmd BufNewFile * call ReadFTETemplate()
 
   " Big file handling
   if !exists("my_auto_commands_loaded")
@@ -98,7 +100,7 @@ endif
     set t_Co=256
     colorscheme solarized 
     "set guifont="Bitstream Vera Sans Mono 10"          " set font
-    set guioptions=agml        " set autoselect,menubar,right-scroll
+    set guioptions=agcl        " set autoselect,menubar,right-scroll
     set mousehide              " hide mouse pointer while typing
   else
     if exists('$MRXVT_TABTITLE')
