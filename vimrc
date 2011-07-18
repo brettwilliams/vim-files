@@ -163,8 +163,6 @@ endif
   map <c-h> <c-w>h
   map <c-l> <c-w>l
 
-  noremap v {gq}
-
   "make . not move the point
   "this one doesn't modify the z mark
   noremap . .`[
