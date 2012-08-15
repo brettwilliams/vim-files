@@ -90,7 +90,7 @@ if v:version > 630
         augroup LargeFile
         autocmd BufReadPre * let f=expand("<afile>") | if getfsize(f) > g:LargeFile | set eventignore+=FileType | setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 | else | set eventignore-=FileType | endif
         augroup END
-endif
+  endif
 
   " }}}
 
@@ -100,8 +100,10 @@ endif
     set t_Co=256
     colorscheme solarized 
     "set guifont="Bitstream Vera Sans Mono 10"          " set font
-    set guioptions=agcl        " set autoselect,menubar,right-scroll
+    set guioptions=agc         
     set mousehide              " hide mouse pointer while typing
+    " set lines=50 
+    " set columns=199
   else
     if exists('$MRXVT_TABTITLE')
       set t_Co=256
@@ -191,8 +193,8 @@ endif
   vmap <C-Up> :m'<-2<CR>gv=gv
   
   "These give emacs-style replace, 1 passed in gives query
-  map <F7> :call Replace(1)<CR>
-  map <F8> :call Replace(0)<CR>
+  "map <F7> :call Replace(1)<CR>
+  "map <F8> :call Replace(0)<CR>
 
   vmap <Leader>a :call Align("f=")<CR>
 
@@ -203,6 +205,8 @@ endif
 
   map <Leader>h :noh<CR>
   map <Leader>s :call Toggle_Paste()<CR>
+  " Paragraph format
+  map <Leader>w {gq}
   " Ok, really funky stuff here
   map <space> i
   map <c-space> <esc>
