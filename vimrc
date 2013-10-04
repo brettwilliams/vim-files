@@ -24,7 +24,7 @@ if v:version > 630
   set tabstop=8                     " set tab stop--I don't use them but..
   set shiftwidth=2                  " set width in autoindent
   "set noerrorbells                  " turn off error bells
-  set directory=$HOME/tmp           " Place all swap files in $HOME/tmp
+  set directory=$HOME/.vimtmp       " Place all swap files in $HOME/tmp
   set expandtab                     " If using autoindent, do not use tabs
   set ruler                         " put coordinates of cursor on screen
   set incsearch                     " while typing search, show match automatic
@@ -86,7 +86,7 @@ if v:version > 630
         "       bufhidden=unload (save memory when other file is viewed)
         "       buftype=nowritefile (is read-only)
         "       undolevels=-1 (no undo possible)
-        let g:LargeFile = 1024 * 1024 * 10
+        let g:LargeFile = 1024 * 1024 * 50
         augroup LargeFile
         autocmd BufReadPre * let f=expand("<afile>") | if getfsize(f) > g:LargeFile | set eventignore+=FileType | setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 | else | set eventignore-=FileType | endif
         augroup END
@@ -98,17 +98,23 @@ if v:version > 630
   " This should work for any terminal I might use
   if has("gui_running")
     set t_Co=256
-    colorscheme solarized 
+    "colorscheme solarized 
+    colorscheme burnttoast256 
     "set guifont="Bitstream Vera Sans Mono 10"          " set font
     set guioptions=agc         
     set mousehide              " hide mouse pointer while typing
     " set lines=50 
     " set columns=199
   else
-    if exists('$MRXVT_TABTITLE')
+    if exists('$IN_SCREEN')
+      colorscheme elflord
+    elseif exists('$MRXVT_TABTITLE')
       set t_Co=256
+      "colorscheme solarized
+      colorscheme burnttoast256
+    else
+      colorscheme elflord
     endif
-    colorscheme solarized
   endif
   " }}}
 

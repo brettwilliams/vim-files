@@ -119,3 +119,7 @@ hi GreenBar                               ctermbg=22  guibg=#005f00
 hi IndentGuidesOdd   ctermbg=235 guibg=#262626 ctermfg=237 guifg=#3a3a3a
 hi IndentGuidesEven  ctermbg=233 guibg=#121212 ctermfg=237 guifg=#3a3a3a
 
+" brettw overrides
+hi Normal guifg=grey85 guibg=grey9
+hi Normal ctermbg=234
+hi Comment      ctermfg=240  guifg=#586e75
