@@ -21,7 +21,7 @@ if v:version > 630
   "q = allow formatting with gq
   "2 = use 2nd line of paragraph for indent
   "n = recognize numbered lists
-  set tabstop=8                     " set tab stop--I don't use them but..
+  set tabstop=2                     " set tab stop--I don't use them but..
   set shiftwidth=2                  " set width in autoindent
   "set noerrorbells                  " turn off error bells
   set directory=$HOME/.vimtmp       " Place all swap files in $HOME/tmp
@@ -64,16 +64,9 @@ if v:version > 630
   " }}}
 
   " FILETYPE SETTINGS and AUTOCMDS       {{{
-  "get different extensions for C++
-  autocmd BufNewFile,BufReadPost *.h        setf cpp 
-  autocmd BufNewFile,BufReadPost *.i        setf cpp 
-  autocmd BufNewFile,BufReadPost *.gmake    setf make 
+  " For some reason these won't override defaults but does work for stuff not
+  " recognized by vim.
   autocmd BufNewFile,BufReadPost *.t2t      setf txt2tags
-  autocmd BufNewFile,BufReadPost *.fte      setf fte
-  autocmd BufNewFile,BufReadPost *.qqq      setf make
-
-  "FTE template hooks
-  "autocmd BufNewFile * call ReadFTETemplate()
 
   " Big file handling
   if !exists("my_auto_commands_loaded")
@@ -119,31 +112,6 @@ if v:version > 630
   " }}}
 
   " DEFINING FUNCTIONS AND COMMANDS                    {{{
-  function ReadFTETemplate()
-    "This function loads a skeleton and automatically
-    "expands it.  Used with new files.
-    let ft=strlen(&ft) ? &ft : 'unknown'
-    if !exists('$VIMTEMPLATES')
-      let $VIMTEMPLATES=$HOME.'/.vim/templates'
-    end
-    let templatefile=$VIMTEMPLATES.'/'.ft.'.fte'
-    if filereadable(templatefile)
-      execute '0r '.templatefile
-      execute '.,$FTE'
-    end
-  endfunction
-
-  " This function gives a query-replace functionality
-  function Replace(confirm_requested)
-    let pattern = input("Replace: ")
-    let subs = input("With: ")
-    let cmd = '%s/'.pattern.'/'.subs.'/g' 
-    if a:confirm_requested
-      let cmd = cmd.'c'
-    endif
-    execute cmd
-  endfunction
-
   function Toggle_Paste()
     if &paste
       set nopaste
@@ -183,10 +151,10 @@ if v:version > 630
 
   " set up so that searches appear in the middle of the screen
   " reserve z mark for last search result
-  noremap n nmzz.`z
-  noremap N Nmzz.`z
-  noremap * *mzz.`z
-  noremap # #mzz.`z
+  "noremap n nmzz.`z
+  "noremap N Nmzz.`z
+  "noremap * *mzz.`z
+  "noremap # #mzz.`z
 
   "These let me things a line up or down, preserving indentation
   " move the current line up or down
@@ -198,24 +166,15 @@ if v:version > 630
   vmap <C-Down>  :m'>+<CR>gv=gv
   vmap <C-Up> :m'<-2<CR>gv=gv
   
-  "These give emacs-style replace, 1 passed in gives query
-  "map <F7> :call Replace(1)<CR>
-  "map <F8> :call Replace(0)<CR>
-
   vmap <Leader>a :call Align("f=")<CR>
 
   "tcomment
   let g:tcommentMapLeaderOp1 = ";c"
-  "yankring
-  map <Leader>y :YRShow<CR>
 
   map <Leader>h :noh<CR>
   map <Leader>s :call Toggle_Paste()<CR>
   " Paragraph format
   map <Leader>w {gq}
-  " Ok, really funky stuff here
-  map <space> i
-  map <c-space> <esc>
   " }}}
 
   " MISCELLANEOUS GLOBAL STUFF           {{{
