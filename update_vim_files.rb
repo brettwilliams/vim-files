@@ -43,7 +43,7 @@ vim_org_scripts = [
 ]
 
 other_scripts = [
-  ['txt2tags','http://txt2tags.org/tools/txt2tags.vim', 'syntax']
+  ['txt2tags','http://txt2tags.googlecode.com/svn/trunk/extras/vim/syntax/txt2tags.vim', 'syntax']
 ]
 
 FileUtils.cd(bundles_dir)
