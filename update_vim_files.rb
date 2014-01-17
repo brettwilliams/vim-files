@@ -34,6 +34,7 @@ git_bundles = [
 #  "git://github.com/fholgado/minibufexpl.vim.git",
 #  "git://github.com/chrismetcalf/vim-yankring.git",
   "git://github.com/taq/vim-git-branch-info.git",
+  "git://github.com/triglav/vim-visual-increment.git",
   "git://repo.or.cz/vcscommand",
 ]
 
