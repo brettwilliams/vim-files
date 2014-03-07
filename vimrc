@@ -175,6 +175,9 @@ if v:version > 630
   map <Leader>s :call Toggle_Paste()<CR>
   " Paragraph format
   map <Leader>w {gq}
+  map <Leader>dy :g/0/normal dd<CR>
+  map <Leader>sy /0<CR>
+  map <Leader>ds :let @0=@/<CR><Leader>dy
   " }}}
 
   " MISCELLANEOUS GLOBAL STUFF           {{{
