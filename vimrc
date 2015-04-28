@@ -89,25 +89,14 @@ if v:version > 630
 
   " Terminal settings {{{
   " This should work for any terminal I might use
+  set t_Co=256
+  colorscheme burnttoast256 
   if has("gui_running")
-    set t_Co=256
-    "colorscheme solarized 
-    colorscheme burnttoast256 
-    "set guifont="Bitstream Vera Sans Mono 10"          " set font
+    set guifont=Fixed\ Medium\ Semi-Condensed\ 10
     set guioptions=agc         
-    set mousehide              " hide mouse pointer while typing
+    "set mousehide              " hide mouse pointer while typing
     " set lines=50 
     " set columns=199
-  else
-    if exists('$IN_SCREEN')
-      colorscheme elflord
-    elseif exists('$MRXVT_TABTITLE')
-      set t_Co=256
-      "colorscheme solarized
-      colorscheme burnttoast256
-    else
-      colorscheme elflord
-    endif
   endif
   " }}}
 
@@ -178,6 +167,11 @@ if v:version > 630
   map <Leader>dy :g/0/normal dd<CR>
   map <Leader>sy /0<CR>
   map <Leader>ds :let @0=@/<CR><Leader>dy
+  " Do these bindings in vimdiff only
+  if &diff
+    nnoremap <Space> ]cz.
+    nnoremap <C-Space> [c
+  endif
   " }}}
 
   " MISCELLANEOUS GLOBAL STUFF           {{{
