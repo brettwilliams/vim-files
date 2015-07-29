@@ -35,7 +35,6 @@ git_bundles = [
 ]
 
 vim_org_scripts = [
-  ["IndexedSearch", "7062",  "plugin", false],
 ]
 
 other_scripts = [
