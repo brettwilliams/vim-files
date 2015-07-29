@@ -27,15 +27,11 @@ FileUtils.rm_rf(pathogen_local_dir)
 git_bundles = [ 
   "git://github.com/msanders/snipmate.vim.git",
   "git://github.com/tpope/vim-git.git",
-  "git://github.com/tpope/vim-repeat.git",
-  "git://github.com/tpope/vim-surround.git",
   "git://github.com/tomtom/tcomment_vim.git",
   "git://github.com/vim-ruby/vim-ruby.git",
 #  "git://github.com/fholgado/minibufexpl.vim.git",
 #  "git://github.com/chrismetcalf/vim-yankring.git",
   "git://github.com/taq/vim-git-branch-info.git",
-  "git://github.com/triglav/vim-visual-increment.git",
-  "git://repo.or.cz/vcscommand",
 ]
 
 vim_org_scripts = [
