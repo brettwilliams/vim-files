@@ -39,7 +39,7 @@ vim_org_scripts = [
 ]
 
 other_scripts = [
-  ['txt2tags','http://txt2tags.googlecode.com/svn/trunk/extras/vim/syntax/txt2tags.vim', 'syntax']
+#  ['txt2tags','http://txt2tags.googlecode.com/svn/trunk/extras/vim/syntax/txt2tags.vim', 'syntax']
 ]
 
 FileUtils.cd(bundles_dir)
@@ -50,7 +50,7 @@ Dir["*"].each {|d| FileUtils.rm_rf d }
 git_bundles.each do |url|
   dir = url.split('/').last.sub(/\.git$/, '')
   puts "  Unpacking #{url} into #{dir}"
-  `/opt/ictools/bin/git clone #{url} #{dir}`
+  `git clone #{url} #{dir}`
   FileUtils.rm_rf(File.join(dir, ".git"))
 end
 
