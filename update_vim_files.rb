@@ -1,11 +1,12 @@
 #!/usr/bin/env ruby
 require 'fileutils'
 require 'open-uri'
+require 'openssl'
 
 def dl_file(url, local_file)
   FileUtils.mkdir_p(File.dirname(local_file))
   File.open(local_file, "w") do |file|
-    file << open(url).read
+    file << open(url, {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}).read
   end
 end
 
@@ -33,13 +34,15 @@ git_bundles = [
 #  "git://github.com/chrismetcalf/vim-yankring.git",
   "git://github.com/taq/vim-git-branch-info.git",
   "git://github.com/henrik/vim-indexed-search.git",
+  "git://github.com/vhda/verilog_systemverilog.vim.git"
 ]
 
 vim_org_scripts = [
 ]
 
 other_scripts = [
-#  ['txt2tags','http://txt2tags.googlecode.com/svn/trunk/extras/vim/syntax/txt2tags.vim', 'syntax']
+  ['liberty','https://raw.githubusercontent.com/peter-d/dotfiles/master/.vim/syntax/liberty.vim', 'syntax'],
+  ['liberty','https://raw.githubusercontent.com/peter-d/dotfiles/master/.vim/ftdetect/liberty.vim', 'ftdetect']
 ]
 
 FileUtils.cd(bundles_dir)
