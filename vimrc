@@ -21,7 +21,7 @@ if v:version > 630
   "q = allow formatting with gq
   "2 = use 2nd line of paragraph for indent
   "n = recognize numbered lists
-  set tabstop=2                     " set tab stop--I don't use them but..
+  "set tabstop=2                     " set tab stop--I don't use them but..
   set shiftwidth=2                  " set width in autoindent
   "set noerrorbells                  " turn off error bells
   set directory=$HOME/.vimtmp       " Place all swap files in $HOME/tmp
@@ -67,6 +67,8 @@ if v:version > 630
   " For some reason these won't override defaults but does work for stuff not
   " recognized by vim.
   autocmd BufNewFile,BufReadPost *.t2t      setf txt2tags
+  autocmd BufNewFile,BufReadPost *.run      set filetype=sh
+  autocmd BufNewFile,BufReadPost *.submit   set filetype=sh
 
   " Big file handling
   if !exists("my_auto_commands_loaded")
