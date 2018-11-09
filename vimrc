@@ -160,7 +160,7 @@ if v:version > 630
   vmap <Leader>a :call Align("f=")<CR>
 
   "tcomment
-  let g:tcommentMapLeaderOp1 = ";c"
+  let g:tcomment_opleader1 = ";c"
 
   map <Leader>h :noh<CR>
   map <Leader>s :call Toggle_Paste()<CR>
